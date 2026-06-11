@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport Practică de Instruire</title>
+    
+</head>
+<style>
+    :root {
+    --dark-blue: #3d4653;       
+    --gold: #bfa17a;            
+    --light-bg: #f4f5f7;       
+    --page-bg: #cbd5e1;         
+    --text-dark: #1e2229;    
+    --text-muted: #5a6c7d;   
+    --color-card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+header.main-header {
+    background-color: var(--dark-blue);
+    padding: 30px 20px 15px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    color: #ffffff; 
+    font-weight: 800;
+        position: static; 
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-content p {
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.linie-decorativa {
+    width: 80px;
+    height: 4px;
+    background-color: var(--gold);
+    margin: 15px auto 20px auto;
+}
+
+.nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-menu a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+    padding-bottom: 3px;
+}
+
+.main-menu a:hover {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 300px 1fr; 
+    gap: 2rem;                        
+}
+
+.sidebar {
+    background-color: var(--color-card-bg); 
+    padding: 1.5rem;
+    border-radius: 12px;                    
+    height: fit-content;
+    position: static; 
+    top: 40px; 
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);  
+}
+
+.sidebar h3 {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--page-bg); 
+}
+
+.table-of-contents {
+    list-style: none;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.85rem;
+}
+
+.table-of-contents a {
+    color: var(--text-dark);
+    text-decoration: none;
+    display: block;
+    padding: 0.4rem 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-left: 3px solid transparent; 
+    transition: all 0.3s ease;           
+}
+
+.table-of-contents a:hover {
+    color: var(--gold);
+    border-left-color: var(--gold);     
+    padding-left: 1rem;                 
+    background-color: rgba(191, 161, 122, 0.05); 
+    border-radius: 0 6px 6px 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background-color: var(--color-card-bg);
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border-bottom: 8px solid var(--gold);
+}
+
+.ribbon {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+    width: 80%;                  
+    position: relative;
+    margin-left: -40px;
+}
+
+.ribbon::after {
+    content: "";
+    position: absolute;
+    right: -40px;          
+    top: 0;
+    height: 100%;
+    width: 40px;                                  
+    background-color: var(--gold);
+    clip-path: polygon(0 0, 100% 0, 60% 50%, 100% 100%, 0 100%);
+}
+
+.bullet {
+            width: 15px;
+            font-weight: bold;
+        }
+ hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 15px 0;
+        }
+footer {
+    background-color: var(--dark-blue);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 900px) {
+    .container { grid-template-columns: 1fr; padding: 0 1rem; }
+    .sidebar { position: static; }
+    .ribbon { width: 100%; margin-left: 0; }
+    .ribbon::after { display: none; }
+}
+
+
+</style>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Practica de instruire</h1>
+            <p>Raportul activităților realizate în cadrul stagiului</p>
+            <div class="linie-decorativa"></div>
+        </div>
+        <nav class="nav-container">
+            <a href="stagiar.html" class="logo">Registru de practică</a>
+           
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Cuprins</h3>
+            <ul class="table-of-contents">
+               <li><a href="stagiar.html">Stagiar CV</a></li>
+                <li><a href="Agenda.html">1. Planificarea activităților zilnice</a></li>
+                <li><a href="TEMA.html">2. Unitatea de învățare analizată</a></li>
+                <li><a href="Rezolvarea.html">3. Rezolvarea problemei</a></li>
+                <li><a href="Experienta.html">Experiențe acumulate</a></li>
+                <li><a href="s.html" style="color: var(--gold); background-color: var(--gold-light); border-left-color: var(--gold);">Declarația privind asumarea răspunderii</a></li>
+            </ul>
+        </aside>
+<section id="declaratie-responsabilitate" style="margin-top: 40px; margin-bottom: 40px;">
+    <div class="card" style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid var(--gold);">
+        
+        <h3 style="color: var(--primary-dark); margin-top: 0; margin-bottom: 20px; font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">
+            Declarație pe proprie răspundere
+        </h3>
+        
+        <p style="color: var(--text-main); line-height: 1.7; font-size: 1.05rem; font-style: italic; margin-bottom: 35px;">
+            Subsemnatul, <strong style="color: var(--primary-dark);">Costas Igor</strong>, declar pe proprie răspundere că materialele prezentate în raport se referă la propriile activități și realizări, în caz contrar urmând să suport consecințele, în conformitate cu legislația în vigoare. Dar ca și ori cine m-am inspirat din surse externe, cer scuze!
+        </p>
+
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; color: var(--text-main); font-size: 0.95rem;">
+            <div>
+                <p style="margin: 5px 0;"><strong>Data:</strong> 08.06.2026</p>
+                <p style="margin: 5px 0;"><strong>Nume, Prenume:</strong> Costas Igor</p>
+            </div>
+            <div style="text-align: center; min-width: 200px;">
+                <p style="margin: 10px 0 10px 10px; text-align: right;"><strong>Semnătura:</strong></p>
+                <img src="sem.jpg" alt="Semnătura Costas Igor" style="max-height: 80px; max-width: 200px; display: block; margin-left: auto;" />
+            </div>
+        </div>
+
+    </div>
+</section>
+    </div>
+    <footer>
+        <p>&copy; 2026 PracticaIG2412@2026.</p>
+    </footer>
+</body>
+</html>

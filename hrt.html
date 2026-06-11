@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Mea Web</title>
+    <style>
+        /* Paleta de culori - o poți modifica ușor aici */
+        :root {
+            --color-primary: #0062ff;   /* Albastru închis (text principal, header) */
+            --color-secondary: #0f766e; /* Turcoaz închis (accent, link-uri) */
+            --color-accent: #2563eb;    /* Albastru intens (hover, butoane) */
+            --color-bg-light: #f8fafc;  /* Fundal pagină */
+            --color-card-bg: #ffffff;  /* Fundal conținut */
+            --color-text: #334155;     /* Culoare text paragraf */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--color-bg-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* --- MENIU NAVIGARE (Header) --- */
+        header {
+            background-color: var(--color-primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .main-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .main-menu a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-menu a:hover {
+            color: #ffffff;
+        }
+
+        /* --- STRUCTURA PAGINII (Layout) --- */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        /* --- CUPRINS (Sidebar) --- */
+        .sidebar {
+            background-color: var(--color-card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 80px; /* Ca să nu rămână sub meniu la scroll */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--color-bg-light);
+        }
+
+        .table-of-contents {
+            list-style: none;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 0.75rem;
+        }
+
+        .table-of-contents a {
+            color: var(--color-text);
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0.5rem;
+            border-left: 3px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .table-of-contents a:hover {
+            color: var(--color-secondary);
+            border-left-color: var(--color-secondary);
+            padding-left: 0.75rem;
+        }
+
+        /* --- CONȚINUT PRINCIPAL --- */
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        section {
+            background-color: var(--color-card-bg);
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            scroll-margin-top: 90px; /* Previne acoperirea titlului de către meniu când dai click pe cuprins */
+        }
+
+        section h2 {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--color-primary);
+            color: #cbd5e1;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        /* --- RESPONSIVITATE (Pentru Telefoane) --- */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Pune cuprinsul sus și conținutul jos pe ecrane mici */
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">ProiectulMeu</a>
+            <ul class="main-menu">
+                <li><a href="#">Acasă</a></li>
+                <li><a href="#">Despre</a></li>
+                <li><a href="#">Servicii</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <h3>Cuprins</h3>
+            <ul class="table-of-contents">
+                <li><a href="#introducere">1. Introducere</a></li>
+                <li><a href="#capitolul1">2. Primul Capitol</a></li>
+                <li><a href="#capitolul2">3. Al Doilea Capitol</a></li>
+                <li><a href="#concluzii">4. Concluzii</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            <section id="introducere">
+                <h2>1. Introducere</h2>
+                <p>Acesta este textul din introducere. Pagina folosește o paletă de culori modernă bazată pe nuanțe profesionale de albastru și gri-textură, ideale pentru citit.</p>
+                <p>Meniul de sus rămâne fixat (sticky) atunci când navighezi în josul paginii.</p>
+            </section>
+
+            <section id="capitolul1">
+                <h2>2. Primul Capitol</h2>
+                <p>Aici poți adăuga informațiile principale. Structura CSS folosește Grid și Flexbox pentru a se asigura că elementele se aliniază perfect pe orice ecran.</p>
+            </section>
+
+            <section id="capitolul2">
+                <h2>3. Al Doilea Capitol</h2>
+                <p>Dacă dai click pe elementele din cuprinsul din stânga, pagina va face un salt lin direct la secțiunea corespunzătoare, fără ca meniul de sus să acopere titlul.</p>
+            </section>
+
+            <section id="concluzii">
+                <h2>4. Concluzii</h2>
+                <p>Aceasta este ultima secțiune. Tot codul este împachetat într-un singur fișier pentru a-ți fi cât mai ușor să îl testezi și să îl modifici după bunul plac.</p>
+            </section>
+        </main>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Proiectul Meu Web. Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>

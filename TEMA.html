@@ -1,0 +1,1059 @@
+ <!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport Practică de Instruire</title>
+    
+</head>
+<style>
+    :root {
+    --dark-blue: #3d4653;       /* Antracit */
+    --gold: #bfa17a;            /* Auriu / Maro accent */
+    --light-bg: #f4f5f7;        /* Fundal secțiuni */
+    --page-bg: #cbd5e1;         /* Fundal general */
+    --text-dark: #1e2229;    
+    --text-muted: #5a6c7d;   
+    --color-card-bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- HEADER PREMIUM --- */
+header.main-header {
+    background-color: var(--dark-blue);
+    padding: 30px 20px 15px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    color: #ffffff; 
+    font-weight: 800;
+        position: static; 
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-content p {
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.linie-decorativa {
+    width: 80px;
+    height: 4px;
+    background-color: var(--gold);
+    margin: 15px auto 20px auto;
+}
+
+/* MENIU NAVIGARE */
+.nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-menu a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+    padding-bottom: 3px;
+}
+
+.main-menu a:hover {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+/* --- LAYOUT GRID --- */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 300px 1fr; 
+    gap: 2rem;                        
+}
+
+/* --- SIDEBAR (CUPRINS) --- */
+.sidebar {
+    background-color: var(--color-card-bg); 
+    padding: 1.5rem;
+    border-radius: 12px;                    
+    height: fit-content;
+    position: static; 
+    top: 40px; 
+    width: 100%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);  
+}
+
+.sidebar h3 {
+    color: var(--dark-blue);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid var(--page-bg); 
+}
+
+.table-of-contents {
+    list-style: none;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.85rem;
+}
+
+.table-of-contents a {
+    color: var(--text-dark);
+    text-decoration: none;
+    display: block;
+    padding: 0.4rem 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-left: 3px solid transparent; 
+    transition: all 0.3s ease;           
+}
+
+.table-of-contents a:hover {
+    color: var(--gold);
+    border-left-color: var(--gold);     
+    padding-left: 1rem;                 
+    background-color: rgba(191, 161, 122, 0.05); 
+    border-radius: 0 6px 6px 0;
+}
+
+/* --- CONȚINUT MAIN --- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+section {
+    background-color: var(--color-card-bg);
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    border-bottom: 8px solid var(--gold);
+}
+
+ p.problem-condition {
+            color: var(--text-main);
+            background-color: #fafafa;
+            padding: 16px;
+            border-left: 4px solid var(--border-color);
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 20px;
+            font-size: 0.98rem;
+        }
+        .ribbon {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 10px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+    width: 80%;                  
+    position: relative;
+    margin-left: -40px;
+}
+
+.ribbon::after {
+    content: "";
+    position: absolute;
+    right: -40px;          
+    top: 0;
+    height: 100%;
+    width: 40px;                                  
+    background-color: var(--gold);
+    clip-path: polygon(0 0, 100% 0, 60% 50%, 100% 100%, 0 100%);
+}
+
+.bullet {
+            width: 15px;
+            font-weight: bold;
+        }
+ hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 15px 0;
+        }
+/* FOOTER */
+footer {
+    background-color: var(--dark-blue);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
+/* STRUCTURĂ TABEL PREMIUM (Adaugă asta în zona ta de <style>) */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse; /* Această linie elimină spațiile duble dintre borduri */
+    margin-top: 20px;
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #cbd5e1; 
+}
+
+.custom-table th {
+    background-color: var(--dark-blue);
+    color: #ffffff;
+    text-align: left;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    border-bottom: 3px solid var(--gold); 
+}
+
+
+.custom-table td {
+    padding: 14px 18px;
+    color: var(--text-dark);
+    border-bottom: 1px solid #e2e8f0; /* Linia fină gri dintre rânduri */
+    font-size: 0.95rem;
+}
+
+/* Opțional: Fundal alternativ pentru rânduri ca să se citească mai ușor */
+.custom-table tr:nth-child(even) {
+    background-color: #f8fafc; 
+}
+/* RESPONSIVITATE */
+@media (max-width: 900px) {
+    .container { grid-template-columns: 1fr; padding: 0 1rem; }
+    .sidebar { position: static; }
+    .ribbon { width: 100%; margin-left: 0; }
+    .ribbon::after { display: none; }
+}
+
+/* DESIGN GRID COLOANE PREMIUM */
+.grid-caracteristici {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+    margin-top: 25px;
+}
+
+.card-caracteristica {
+    background-color: #f8fafc; /* Fundal fin alb-gri */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 30px 25px 25px 25px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.card-caracteristica:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+}
+
+/* Emblemă / Stemă mică în colțul fiecărei coloane */
+.card-caracteristica::before {
+    content: ""; /* Lăsăm content gol, imaginea va fi fundalul */
+    position: absolute;
+    top: -12px;
+    left: 25px;
+    
+    /* Proprietățile pentru imaginea ta */
+    background: url('material-symbols--star.png') no-repeat center center;
+    background-size: 16px 16px; /* Ajustează dimensiunea imaginii în interiorul cercului */
+    
+    /* Păstrăm cercul decorativ din jurul ei */
+    background-color: var(--gold);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(191, 161, 122, 0.4);
+}
+
+.card-caracteristica h4 {
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--page-bg);
+    padding-bottom: 8px;
+}
+
+.card-item {
+    margin-bottom: 15px;
+}
+
+.card-item:last-child {
+    margin-bottom: 0;
+}
+
+/* --- STILURI PENTRU SCHEMA IERARHICĂ (DIAGRAMĂ) --- */
+.schema-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px dashed var(--gold);
+}
+
+/* Blocul pentru Clasa Abstractă (Părinte) */
+.bloc-abstract {
+    background-color: var(--dark-blue);
+    color: #ffffff;
+    border: 2px solid var(--gold);
+    padding: 15px 25px;
+    border-radius: 6px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    min-width: 220px;
+    position: relative;
+}
+
+.bloc-abstract span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+/* Linia verticală de legătură principală */
+.linie-verticala {
+    width: 2px;
+    height: 30px;
+    background-color: var(--dark-blue);
+}
+
+/* Ramificația orizontală */
+.linie-orizontala-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    position: relative;
+}
+
+.linie-orizontala {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--dark-blue);
+}
+
+/* Containerele pentru ramurile de jos */
+.ramura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+/* Blocurile pentru Clasele Concrete (Copii) */
+.bloc-concret {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: 1px solid #cbd5e1;
+    border-top: 4px solid var(--dark-blue);
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    min-width: 160px;
+    margin-top: 10px;
+}
+
+.bloc-concret span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* Ajustare pentru ecrane mici (Mobil) */
+@media (max-width: 600px) {
+    .linie-orizontala-container { flex-direction: column; align-items: center; gap: 20px; }
+    .linie-orizontala, .linie-verticala { display: none; }
+    .ramura { width: 100%; }
+    .bloc-concret { margin-top: 0; }
+    .schema-container { gap: 15px; }
+}
+/* --- STRUCTURĂ COMPARATIVĂ (AVANTAJE / DEZAVANTAJE) --- */
+.container-comparativ {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 25px;
+}
+
+.panou-comparativ {
+    background-color: #f8fafc;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.panou-comparativ.avantaje {
+    border-top: 4px solid #10b981; /* Linie verde pentru avantaje */
+}
+
+.panou-comparativ.dezavantaje {
+    border-top: 4px solid #ef4444; /* Linie roșie pentru dezavantaje */
+}
+
+.panou-comparativ h3 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.panou-comparativ.avantaje h3 { color: #10b981; }
+.panou-comparativ.dezavantaje h3 { color: #ef4444; }
+
+.lista-comparativa {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-comparativa li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.lista-comparativa li:last-child {
+    margin-bottom: 0;
+}
+
+.panou-comparativ.avantaje .lista-comparativa li::before {
+    content: ""; 
+    position: absolute;
+    left: 0;
+    top: 3px; 
+    
+    background: url('humbleicons--check.png') no-repeat center center;
+    background-size: contain; 
+    
+    width: 18px;
+    height: 18px;
+    
+    font-weight: normal; 
+    color: transparent; 
+}
+
+.panou-comparativ.dezavantaje .lista-comparativa li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px; 
+    
+    background: url('humbleicons--times.png') no-repeat center center;
+    background-size: contain; 
+    
+    width: 18px;
+    height: 18px;
+        font-weight: normal; 
+    color: transparent; 
+}
+/* Adaptare completă pentru mobil */
+@media (max-width: 768px) {
+    .container-comparativ {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+}
+.btn-sus {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    
+    background-color: #3d4653; 
+    
+    padding: 10px; 
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+.btn-sus:hover {
+    background-color: #bfa17a;
+    transform: translateY(-5px);
+}
+</style>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1>Practica de instruire</h1>
+            <p>Raportul activităților realizate în cadrul stagiului</p>
+            <div class="linie-decorativa"></div>
+        </div>
+        <nav class="nav-container">
+            <a href="stagiar.html" class="logo">Registru de practică</a>
+           
+        </nav>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Cuprins</h3>
+            <ul class="table-of-contents">
+               <li><a href="stagiar.html">Stagiar CV</a></li>
+                <li><a href="Agenda.html">1. Planificarea activităților zilnice</a></li>
+                <li><a href="TEMA.html" style="color: var(--gold); border-left-color: var(--gold);">2. Unitatea de învățare analizată</a></li>
+                <li><a href="Rezolvarea.html">3. Rezolvarea problemei</a></li>
+                <li><a href="Experienta.html">Experiențe acumulate</a></li>
+                <li><a href="s.html">Declarația privind asumarea răspunderii</a></li>
+            </ul>
+        </aside>
+<section>
+    <div class="ribbon"> Tema: Clase Abstracte</div>
+    <hr>
+    <p class="problem-condition">      O clasă abstractă este un tip de clasă în programarea orientată pe obiecte care nu     poate fi instanțiată direct și poate conține metode abstracte (fără implementare)     și/sau metode concrete. Rolul său este să furnizeze o bază comună pentru clasele     derivate, definind un contract (comportament așteptat) și implementări parțiale     comune.   </p>
+   
+<table class="custom-table">
+    <thead>
+        <tr>
+            <th style="width: 30%;">Element Cheie</th>
+            <th style="width: 70%;">Descriere și Impact în Proiectare</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Instanțiere restricționată</strong></td>
+            <td>Nu poate fi creată direct cu operatorul <code>new</code>. Servește exclusiv ca șablon de bază pentru alte componente.</td>
+        </tr>
+        <tr>
+            <td><strong>Definire contracte (Metode abstracte)</strong></td>
+            <td>Poate declara metode abstracte (fără corp) care obligă în mod strict clasele copil să ofere o implementare proprie.</td>
+        </tr>
+        <tr>
+            <td><strong>Partajare stare și logică</strong></td>
+            <td>Poate conține stări (atribute/câmpuri) și implementări comune utilitare, reducând duplicarea codului în subclase.</td>
+        </tr>
+        <tr>
+            <td><strong>Polimorfism de nivel înalt</strong></td>
+            <td>Permite polimorfismul și o proiectare curată orientată pe interfețe de nivel înalt, facilitând extinderea ușoară a sistemului.</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+    <div class="ribbon">Rolul clasei abstracte în programare</div>
+    
+    <div style="margin-top: 30px;">
+        <h3 style="color: var(--dark-blue); font-size: 1.25rem; margin-bottom: 10px; font-weight: 700;">
+            1. Definirea unui contract
+        </h3>
+        <p style="margin-bottom: 20px; color: var(--text-dark);">
+            Clasa abstractă impune o structură clară pentru toate subclasele sale. Dacă definești o metodă abstractă numită <code>calculeazaSalariu()</code> într-o clasă abstractă <code>Angajat</code>, ești absolut sigur că orice clasă copil (<code>Manager</code>, <code>Programator</code>) va fi obligată să își scrie propria logică pentru această metodă.
+        </p>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.25rem; margin-bottom: 10px; font-weight: 700;">
+            2. Evitarea duplicării codului
+        </h3>
+        <p style="margin-bottom: 20px; color: var(--text-dark);">
+            Spre deosebire de o interfață (în limbajele clasice), clasa abstractă îți permite să scrii cod funcțional pe care toate subclasele îl împart. De exemplu, metoda <code>afiseazaDetaliiAngajat()</code> poate fi implementată direct în clasa abstractă, deoarece este identică pentru toți angajații.
+        </p>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.25rem; margin-bottom: 10px; font-weight: 700;">
+            3. Polimorfism
+        </h3>
+        <p style="margin-bottom: 25px; color: var(--text-dark);">
+            Permite tratarea diferitelor obiecte din clase derivate într-un mod uniform. Poți avea o listă de tipul <code>Angajat[]</code> care conține și <code>Manageri</code> și <code>Programatori</code>, iar când apelezi <code>calculeazaSalariu()</code>, fiecare obiect va executa propria sa logică.
+        </p>
+
+        <hr>
+
+        <div style="margin-top: 25px;">
+            <h3 style="color: var(--dark-blue); font-size: 1.35rem; margin-bottom: 15px; font-weight: 700;">
+                Importanța conceptului
+            </h3>
+            <p style="margin-bottom: 15px; color: var(--text-dark);">
+                Fără clase abstracte, arhitectura sistemelor software mari ar fi extrem de greu de gestionat. Importanța lor majoră rezidă în:
+            </p>
+            
+            <ul style="padding-left: 20px; list-style-type: disc;">
+                <li style="margin-bottom: 12px;">
+                    <strong>Abstractizare corectă:</strong> Te ajută să ascunzi detaliile complexe de implementare și să te concentrezi pe <em>ce</em> face un obiect, nu pe <em>cum</em> face.
+                </li>
+                <li style="margin-bottom: 12px;">
+                    <strong>Mentenanță ușoară:</strong> Dacă o regulă generală se schimbă, o modifici într-un singur loc (în clasa abstractă) și toate clasele copii beneficiază instant de modificare.
+                </li>
+                <li style="margin-bottom: 12px;">
+                    <strong>Securitate în design:</strong> Previne instanțierea unor concepte care în realitate sunt prea vagi. De exemplu, conceptul de <code>"Animal"</code> este prea abstract pentru a exista de sine stătător; în schimb, un <code>"Câine"</code> sau o <code>"Pisică"</code> (clase concrete) au sens să devină obiecte.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="ribbon">Caracteristici principale</div>
+    
+    <div style="margin-top: 30px;">
+        <p style="margin-bottom: 25px; color: var(--text-dark);">
+            Clasele abstracte vin cu un set de reguli și trăsături bine definite la nivelul limbajului C#, care influențează direct modul în care structurăm ierarhiile de componente:
+        </p>
+
+        <div class="grid-caracteristici">
+            
+            <div class="card-caracteristica">
+                <h4>Definire și Instanțiere</h4>
+                <div class="card-item">
+                    <strong>Cuvântul cheie <code>abstract</code>:</strong> Se declară obligatoriu folosind modificatorul în fața clasei (ex: <code>abstract class Animal</code>).
+                </div>
+                <div class="card-item">
+                    <strong>Restricție de instanțiere:</strong> Nu pot fi create obiecte directe dintr-o astfel de clasă. Linia de cod <code>Animal a = new Animal();</code> va genera o eroare de compilare.
+                </div>
+            </div>
+
+            <div class="card-caracteristica">
+                <h4>Comportament și Metode</h4>
+                <div class="card-item">
+                    <strong>Metode abstracte (fără corp):</strong> Poate conține metode marcate cu <code>abstract</code>, care nu au acordate și se termină cu punct și virgulă, definind doar semnătura.
+                </div>
+                <div class="card-item">
+                    <strong>Metode obișnuite:</strong> Spre deosebire de o interfață pură, conține și metode normale, cu logică completă, moștenite direct de clasele derivate.
+                </div>
+            </div>
+
+            <div class="card-caracteristica">
+                <h4>Ierarhie și Stare</h4>
+                <div class="card-item">
+                    <strong>Rol de clasă de bază:</strong> Scopul principal este de a servi drept rădăcină sau „părinte” pentru alte clase concrete care o vor extinde prin moștenire (folosind simbolul <code>:</code>).
+                </div>
+                <div class="card-item">
+                    <strong>Constructori și câmpuri:</strong> Poate stoca variabile de stare (câmpuri) și poate avea un constructor propriu, apelat automat de clasele copii prin intermediul cuvântului cheie <code>base</code>.
+                </div>
+            </div>
+
+            <div class="card-caracteristica">
+                <img src="ChatGPT Image 8 iun. 2026, 23_51_41.png" style="width: 300px; height: 300px; margin-bottom: 5px;">
+                </div>
+        </div>
+        </div>
+<hr>
+        <div class="ribbon">Exemplu de ierarhie cu clase abstracte</div>
+    <div class="schema-container">
+    
+    <div class="bloc-abstract">
+        <span>&lt;&lt;Abstract&gt;&gt;</span>
+        <strong>Clasa Persoana</strong>
+        <div style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">
+            - Nume, CNP, Email<br>
+            * abstract AfiseazaMeniu()
+        </div>
+    </div>
+    
+    <div class="linie-verticala"></div>
+    
+    <div class="linie-orizontala-container">
+        <div class="linie-orizontala"></div>
+        
+        <div class="ramura">
+            <div class="linie-verticala"></div>
+            <div class="bloc-concret">
+                <span>Clasă Concretă</span>
+                <strong>Clasa Medic</strong>
+                <div style="font-size: 0.75rem; margin-top: 5px; color: var(--text-muted);">
+                    + override AfiseazaMeniu()<br>
+                    <span style="color: #10b981;">* Implementare specifică</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ramura">
+            <div class="linie-verticala"></div>
+            <div class="bloc-concret">
+                <span>Clasă Concretă</span>
+                <strong>Clasa Pacient</strong>
+                <div style="font-size: 0.75rem; margin-top: 5px; color: var(--text-muted);">
+                    + override AfiseazaMeniu()<br>
+                    <span style="color: #10b981;">* Implementare specifică</span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<hr>
+    <div class="ribbon">Avantaje și dezavantaje</div>
+    
+    <div style="margin-top: 30px;">
+        <p style="margin-bottom: 20px; color: var(--text-dark);">
+            Implementarea claselor abstracte în arhitectura software aduce beneficii majore privind structura și securitatea designului, însă introduce și anumite constrângeri de care dezvoltatorul trebuie să țină cont:
+        </p>
+
+        <div class="container-comparativ">
+            
+            <div class="panou-comparativ avantaje">
+                <h3>Avantaje majore</h3>
+                <ul class="lista-comparativa">
+                    <li>
+                        <strong>Standardizare strictă (Contract):</strong> Obligă toate clasele derivate să implementeze comportamentele abstracte, eliminând riscul ca un dezvoltator să uite să scrie o funcție critică (ex: calculele financiare sau de acces).
+                    </li>
+                    <li>
+                        <strong>Reutilizare maximă a codului:</strong> Permite scrierea o singură dată a metodelor și logicii comune direct în clasa părinte. Subclasele le moștenesc nativ, reducând semnificativ duplicarea (`DRY - Don't Repeat Yourself`).
+                    </li>
+                    <li>
+                        <strong>Suport nativ pentru Polimorfism:</strong> Poți lucra cu colecții generice de obiecte diferite la nivel înalt (folosind tipul clasei abstracte), simplificând codul de procesare din aplicație.
+                    </li>
+                    <li>
+                        <strong>Mentenanță rapidă și sigură:</strong> Orice modificare adusă unei metode complet implementate în clasa abstractă se propagă instantaneu și automat la toate componentele copii.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panou-comparativ dezavantaje">
+                <h3>Dezavantaje și Limitări</h3>
+                <ul class="lista-comparativa">
+                    <li>
+                        <strong>Restricția moștenirii unice (C#):</strong> Deoarece C# nu suportă moștenirea multiplă, o clasă concretă poate moșteni o singură clasă abstractă. Dacă o componentă are nevoie de mai multe șabloane, structura devine rigidă.
+                    </li>
+                    <li>
+                        <strong>Cuplaj strâns (Tight Coupling):</strong> Clasele copii depind direct și total de structura clasei părinte. O schimbare majoră sau greșită în clasa abstractă poate strica sau destabiliza funcționarea tuturor subclaselor.
+                    </li>
+                    <li>
+                        <strong>Complexitate structurală crescută:</strong> Adăugarea prea multor niveluri de abstractizare într-un proiect mic sau mediu poate complica inutil citirea și depanarea codului (over-engineering).
+                    </li>
+                    <li>
+                        <strong>Imposibilitatea instanțierii directe:</strong> Faptul că nu poți crea un obiect direct cu operatorul <code>new</code> te obligă să dezvolți întotdeauna o clasă derivată separată, chiar și pentru scenarii foarte simple.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <hr>
+
+        <p style="margin-top: 20px; font-size: 0.95rem; color: var(--text-muted); font-style: italic;">
+            <strong>Concluzie de proiectare:</strong> Clasele abstracte oferă un control mult mai puternic decât interfețele simple prin prisma stărilor comune partajate, însă trebuie utilizate cu discernământ pentru a evita crearea unor ierarhii de cod prea rigide sau greu de modificat în timp.
+        </p>
+    </div>
+
+    <hr>
+    <div class="ribbon">Exemple de utilizare în dezvoltarea programelor</div>
+    
+    <div style="margin-top: 30px;">
+        <p style="margin-bottom: 25px; color: var(--text-dark);">
+            În dezvoltarea sistemelor software moderne, clasele abstracte sunt utilizate pentru a crea nuclee extensibile. Un exemplu clasic este gestionarea conținutului media sau a metodelor de plată, unde regulile de bază sunt identice, dar execuția diferă complet.
+        </p>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-bottom: 10px; font-weight: 700;">
+            Exemplul 1: Arhitectura unei Aplicații de Streaming Video
+        </h3>
+        <p style="margin-bottom: 15px; color: var(--text-dark);">
+            Într-o platformă de streaming, putem avea diferite tipuri de conținut: <code>Film</code> sau <code>EpisodSerial</code>. Toate împart elemente comune (Titlu, Durată, ID), dar modul în care se încarcă player-ul sau cum se contorizează vizionarea diferă.
+        </p>
+
+        <pre style="background-color: #1e2229; color: #f8fafc; padding: 20px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 0.9rem; line-height: 1.5; overflow-x: auto; margin-bottom: 20px; border-left: 4px solid var(--gold);">
+<span style="color: #569cd6;">public abstract class</span> <span style="color: #4ec9b0;">MediaContent</span>
+{
+    <span style="color: #569cd6;">public string</span> Titlu { <span style="color: #569cd6;">get</span>; <span style="color: #569cd6;">set</span>; }
+    <span style="color: #569cd6;">public int</span> DurataMinute { <span style="color: #569cd6;">get</span>; <span style="color: #569cd6;">set</span>; }
+
+    <span style="color: #57a64a;">// Metodă comună moștenită direct (Evită duplicarea)</span>
+    <span style="color: #569cd6;">public void</span> AfiseazaInfo() 
+    {
+        <span style="color: #4ec9b0;">Console</span>.WriteLine(<span style="color: #d69d85;">$"{Titlu} ({DurataMinute} min)"</span>);
+    }
+
+    <span style="color: #57a64a;">// Metodă abstractă obligatorie (Contractul)</span>
+    <span style="color: #569cd6;">public abstract void</span> IncarcaSursaVideo();
+}</pre>
+
+        <div class="caseta-stema" style="margin: 15px 0 35px 0;">
+            <div class="caseta-stema-titlu">Cum se extinde în producție</div>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--text-dark);">
+                Clasa concretă <code>Film</code> va folosi <code>override void IncarcaSursaVideo()</code> pentru a deschide un singur fișier video mare din server, în timp ce clasa <code>EpisodSerial</code> va folosi aceeași metodă pentru a prelua automat ID-ul sezonului și a rula secvența de intro salvată separat.
+            </p>
+        </div>
+
+        <hr>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-top: 25px; margin-bottom: 10px; font-weight: 700;">
+            Exemplul 2: Procesarea Tranzacțiilor într-un Magazin Online
+        </h3>
+        <p style="margin-bottom: 15px; color: var(--text-dark);">
+            Atunci când utilizatorul cumpără un abonament sau un produs, magazinul poate procesa plata prin mai multe gateway-uri: <code>CardBancar</code>, <code>PayPal</code> sau <code>Crypto</code>. Clasa abstractă unifică apelul în cod:
+        </p>
+
+        <pre style="background-color: #1e2229; color: #f8fafc; padding: 20px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 0.9rem; line-height: 1.5; overflow-x: auto; margin-bottom: 20px; border-left: 4px solid var(--gold);">
+<span style="color: #569cd6;">public abstract class</span> <span style="color: #4ec9b0;">ProcesatorPlata</span>
+{
+    <span style="color: #569cd6;">protected double</span> suma;
+    
+    <span style="color: #569cd6;">public void</span> SetareSuma(<span style="color: #569cd6;">double</span> valoare) { suma = valoare; }
+
+    <span style="color: #57a64a;">// Fiecare metodă de plată își va scrie securizarea proprie</span>
+    <span style="color: #569cd6;">public abstract bool</span> ExecutaTranzactie();
+}</pre>
+
+        <p style="margin-top: 15px; font-size: 0.95rem; color: var(--text-dark);">
+            Datorită **polimorfismului**, restul aplicației nu trebuie să știe ce metodă a ales clientul. Se va apela simplu o colecție sau un obiect de tipul general <code>ProcesatorPlata</code>, rulând codul salvat în background în mod uniform.
+        </p>
+    </div>
+
+<hr>
+
+<div class="ribbon">Exemple practice de cod</div>
+    
+    <div style="margin-top: 30px;">
+        <p style="margin-bottom: 25px; color: var(--text-dark);">
+            Pentru a demonstra aplicabilitatea conceptului de clasă abstractă, am dezvoltat în cadrul stagiului de practică o serie de module software în limbajul C#. Mai jos sunt prezentate fragmentele de cod esențiale, logica din spatele acestora și modul în care au fost integrate în proiectele mele individuale.
+        </p>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-bottom: 12px; font-weight: 700;">
+            1. Fragment de cod C# (Definire și Moștenire)
+        </h3>
+        <p style="margin-bottom: 15px; color: var(--text-dark);">
+            Următorul exemplu ilustrează implementarea unei structuri abstracte ce stă la baza unui modul de calcul și formatare a datelor dintr-un sistem:
+        </p>
+
+        <pre style="background-color: #1e2229; color: #f8fafc; padding: 20px; border-radius: 6px; font-family: 'Consolas', monospace; font-size: 0.9rem; line-height: 1.5; overflow-x: auto; margin-bottom: 25px; border-left: 4px solid var(--gold);">
+<span style="color: #569cd6;">using</span> System;
+
+<span style="color: #569cd6;">public abstract class</span> <span style="color: #4ec9b0;">ElementSistem</span>
+{
+    <span style="color: #569cd6;">public string</span> Identificator { <span style="color: #569cd6;">get</span>; <span style="color: #569cd6;">set</span>; }
+
+    <span style="color: #569cd6;">public</span> <span style="color: #4ec9b0;">ElementSistem</span>(<span style="color: #569cd6;">string</span> id) { Identificator = id; }
+
+    <span style="color: #57a64a;">// Metodă abstractă - Contract obligatoriu pentru copii</span>
+    <span style="color: #569cd6;">public abstract void</span> ProceseazaDate();
+}
+
+<span style="color: #569cd6;">public class</span> <span style="color: #4ec9b0;">ModulSpecific</span> : <span style="color: #4ec9b0;">ElementSistem</span>
+{
+    <span style="color: #569cd6;">public string</span> TipModul { <span style="color: #569cd6;">get</span>; <span style="color: #569cd6;">set</span>; }
+
+    <span style="color: #569cd6;">public</span> <span style="color: #4ec9b0;">ModulSpecific</span>(<span style="color: #569cd6;">string</span> id, <span style="color: #569cd6;">string</span> tip) : <span style="color: #569cd6;">base</span>(id)
+    {
+        TipModul = tip;
+    }
+
+    <span style="color: #57a64a;">// Suprareactivarea și implementarea metodei abstracte</span>
+    <span style="color: #569cd6;">public override void</span> <span style="color: #74cdf4;">ProceseazaDate</span>()
+    {
+        <span style="color: #4ec9b0;">Console</span>.WriteLine(<span style="color: #d69d85;">$"[LOG]: Modulul {Identificator} ({TipModul}) a fost procesat cu succes."</span>);
+    }
+}</pre>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-top: 30px; margin-bottom: 12px; font-weight: 700;">
+            2. Explicația funcționării codului
+        </h3>
+        
+        <table class="custom-table" style="margin-bottom: 35px;">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Element din Cod</th>
+                    <th style="width: 70%;">Rolul și Mecanismul de Execuție</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>abstract class ElementSistem</code></td>
+                    <td>Reprezintă clasa părinte care blochează instanțierea directă. Scopul ei este de a asigura că orice modul va deține un <code>Identificator</code>.</td>
+                </tr>
+                <tr>
+                    <td><code>public abstract void ProceseazaDate();</code></td>
+                    <td>Metodă fără corp (fără acolade). Ea servește drept promisiune arhitecturală: clasa de bază nu știe cum se procesează datele, dar garantează că toate clasele derivate vor avea această funcție.</td>
+                </tr>
+                <tr>
+                    <td><code>: base(id)</code></td>
+                    <td>Invocă în mod direct constructorul clasei abstracte de bază, transmițând valoarea identificatorului în sus pe ierarhia de moștenire pentru a fi salvată corect în memorie.</td>
+                </tr>
+                <tr>
+                    <td><code>public override void...</code></td>
+                    <td>Modificatorul <code>override</code> permite clasei copil să spargă designul abstract și să insereze codul funcțional efectiv (afișarea mesajului în consolă).</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.35rem; margin-top: 30px; margin-bottom: 15px; font-weight: 700;">
+            3. Exemple proprii realizate de elev în cadrul stagiului
+        </h3>
+        <p style="margin-bottom: 20px; color: var(--text-dark);">
+            Pe parcursul stagiului meu de practică, am aplicat conceptele claselor abstracte în două proiecte software individuale de complexitate medie:
+        </p>
+
+        <div class="grid-caracteristici" style="margin-bottom: 20px;">
+            
+            <div class="card-caracteristica">
+                <h4>Sistem Management Medical</h4>
+                <div class="card-item" style="font-size: 0.95rem;">
+                    <strong>Arhitectură:</strong> Am creat o clasă abstractă centrală numită <code>Persoana</code> care stochează datele de identificare generale (Nume, Prenume, Contact).
+                </div>
+                <div class="card-item" style="font-size: 0.95rem;">
+                    <strong>Implementare:</strong> Din aceasta am derivat clasele concrete <code>Medic</code> și <code>Pacient</code>. Fiecare clasă copil a extins modelul general, adăugând atribute unice (specializarea pentru medici sau istoricul medical pentru pacienți) și suprascriind metodele de afișare a fișei personale.
+                </div>
+            </div>
+
+            <div class="card-caracteristica">
+                <h4>Platformă de Streaming Media</h4>
+                <div class="card-item" style="font-size: 0.95rem;">
+                    <strong>Arhitectură:</strong> Am dezvoltat un nucleu flexibil bazat pe clasa abstractă <code>Abonament</code> pentru a gestiona logica de acces la conținut și taxarea utilizatorilor.
+                </div>
+                <div class="card-item" style="font-size: 0.95rem;">
+                    <strong>Implementare:</strong> Subclasele concrete (<code>AbonamentBasic</code>, <code>AbonamentPremium</code>) au moștenit prețul standard și au implementat individual metodele abstracte de calcul al limitelor de dispozitive active simultan și accesul la rezoluții UltraHD.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="caseta-stema" style="margin-top: 30px;">
+            <div class="caseta-stema-titlu">Evaluarea impactului proiectelor</div>
+            <p style="margin: 0; font-style: italic; font-size: 0.95rem; color: var(--text-dark);">
+                "Dezvoltarea acestor proiecte proprii mi-a demonstrat că utilizarea corectă a claselor abstracte reduce timpul de extindere a programelor. Adăugarea unui nou tip de abonament sau unui nou rol în sistemul medical se face prin adăugarea unei singure clase derivate, lăsând restul aplicației neatins și stabil."
+            </p>
+        </div>
+
+    </div>
+<hr>
+    <div class="ribbon">Concluzii și evaluare finală</div>
+    
+    <div style="margin-top: 30px;">
+        
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-bottom: 12px; font-weight: 700;">
+            1. Observații personale și evoluția profesională
+        </h3>
+        <p style="margin-bottom: 20px; color: var(--text-dark); line-height: 1.6;">
+            Parcurgerea acestui stagiu de practică și utilizarea directă a claselor abstracte au marcat o evoluție clară în modul meu de a aborda scrierea codului. Am realizat că trecerea de la metodele pur intuitive sau procedurale la o modelare riguroasă, bazată pe principii solide de Programare Orientată pe Obiecte (POO), este esențială pentru a deveni un programator disciplinat. 
+        </p>
+        <p style="margin-bottom: 25px; color: var(--text-dark); line-height: 1.6;">
+            Respectarea unei agende stricte de lucru și documentarea cazurilor de utilizare pentru aplicația medicală și cea de streaming mi-au demonstrat că faza de proiectare pe hârtie economisește zeci de ore de depanare ulterioară.
+        </p>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-top: 30px; margin-bottom: 12px; font-weight: 700;">
+            2. Dificultăți întâmpinate și soluționarea lor tehnică
+        </h3>
+        <p style="margin-bottom: 15px; color: var(--text-dark);">
+            Pe parcursul implementării practice în C#, corelarea conceptelor abstracte cu algoritmii riguroși a generat o serie de provocări rezolvate prin abordări sistematice:
+        </p>
+
+        <table class="custom-table" style="margin-bottom: 30px;">
+            <thead>
+                <tr>
+                    <th style="width: 35%;">Dificultate Tehnică</th>
+                    <th style="width: 65%;">Abordare și Soluție Aplicată</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gestiunea memoriei și a constructorilor</strong></td>
+                    <td>La început, instanțierea claselor copii arunca erori din cauza nedeclarării corecte a parametrilor. Am rezolvat problema prin înțelegerea și utilizarea cuvântului cheie <code>base</code> pentru a trimite corect starea către constructorul clasei abstracte.</td>
+                </tr>
+                <tr>
+                    <td><strong>Modelarea corectă a stărilor în POO</strong></td>
+                    <td>Separarea a ceea ce trebuie să fie complet abstract de ceea ce poate fi reutilizat a necesitat o analiză matematică și arhitecturală atentă, mapând comportamentele comune doar la nivelul de bază.</td>
+                </tr>
+                <tr>
+                    <td><strong>Testarea cazurilor limită (Edge Cases)</strong></td>
+                    <td>Validarea structurilor s-a lovit de erori la procesarea datelor goale. Soluția a constat în crearea de teste unitare sistematice și utilizarea de fișiere de intrare/ieșire masive pentru a asigura stabilitatea metodelor suprascrise.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem; margin-top: 30px; margin-bottom: 12px; font-weight: 700;">
+            3. Importanța subiectului în dezvoltarea aplicațiilor software moderne
+        </h3>
+        <p style="margin-bottom: 20px; color: var(--text-dark); line-height: 1.6;">
+            Subiectul claselor abstracte este pilonul de rezistență al ingineriei software scalabile. În lipsa acestui concept, aplicațiile mari din industrie ar deveni rapid imposibil de gestionat, sufocate de duplicarea codului și de cuplajul rigid între componente. 
+        </p>
+        
+        
+
+        <div class="caseta-stema" style="margin-top: 30px;">
+            <div class="caseta-stema-titlu">Gând de încheiere</div>
+            <p style="margin: 0; font-style: italic; font-size: 0.95rem; color: var(--text-dark);">
+                "Stagiul de practică mi-a demonstrat că programarea de înalt nivel nu înseamnă doar scrierea de linii de cod care funcționează, ci proiectarea unei structuri inteligente. Clasele abstracte sunt instrumentul perfect prin care un viitor specialist își poate transforma codul într-un produs software stabil, sigur și ușor de întreținut în timp."
+            </p>
+        </div>
+        <hr>
+    <div class="ribbon">Bibliografie / Surse web</div>
+    
+    <div style="margin-top: 30px;">
+        <ul style="padding-left: 20px; list-style-type: decimal;">
+            <li style="margin-bottom: 12px;">
+                <strong style="color: var(--dark-blue);">Tehnici de programare în C# din Prezentare classroom</strong> 
+                <a href="https://classroom.google.com/c/ODY1MDIxNjcxMDU3/m/ODY1MDIxNjcxMDg3/details" target="_blank" style="color: var(--text-dark); text-decoration: underline; margin-left: 5px;">https://learn.microsoft.com/en-us/dotnet/csharp/</a>
+            </li>
+            <li style="margin-bottom: 12px;">
+                <strong style="color: var(--dark-blue);">Microsoft Learn: Clase abstracte</strong> 
+                <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/abstract" target="_blank" style="color: var(--text-dark); text-decoration: underline; margin-left: 5px;">https://www.w3schools.com/cs/</a>
+            </li>
+        </ul>
+    </div>
+
+</section>
+      </main>
+    </div>
+  <footer>
+ <p>&copy; 2026 PracticaIG2412@2026.</p>
+    </footer>
+ <a href="TEMA.html" class="btn-sus">
+    <img src="meteor-icons--angles-up.png" alt="Sus" style="width: 30px; height: 30px; display: block;">
+</body>
+</html>
